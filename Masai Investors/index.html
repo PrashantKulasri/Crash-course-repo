@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Investors</title>
+    <style>
+        *{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+
+<script>
+    let array = [
+        {
+            image1 : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+            name : "Vijay Shekhar Sharma",
+            title : "Founder & CEO",
+            image2 : "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+        },
+
+        {
+            image1 : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+            name : "Kunal Shah",
+            title : "Founder",
+            image2 : "https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"
+        },
+
+        {
+            image1 : "https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",
+            name : "Amrish Rao",
+            title : "CEO",
+            image2 : "https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png"
+        },
+
+        {
+            image1 : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",
+            name : "Sampad Swain",
+            title : "Co-Founder & CEO",
+            image2 : "https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png"
+        }
+
+    ];
+
+    let body = document.querySelector("body");
+
+    let maindiv = document.createElement("div");
+    maindiv.style.width = "94%";
+    maindiv.style.margin = "auto";
+
+    let headingdiv = document.createElement("div");
+
+    let elementdiv = document.createElement("div");
+
+    let headingone = document.createElement("h1");
+    headingone.innerText = "Strategic Investors";
+    headingone.style.fontWeight = "bold";
+    headingone.style.textAlign = "center";
+
+    array.forEach(function(ele,i){
+
+        let childdiv = document.createElement("div");
+
+        let imageone = document.createElement("img");
+        imageone.src = ele.image1;
+
+        let ownername = document.createElement("h2");
+        ownername.innerText = ele.name;
+
+        let position = document.createElement("p");
+        position.innerText = ele.title;
+
+        let imagetwo = document.createElement("img");
+        imagetwo.src = ele.image2;
+
+        childdiv.append( imageone , ownername , position , imagetwo);
+
+        elementdiv.append(childdiv);
+
+        childdiv.style.width = "23%";
+        childdiv.style.boxShadow = "rgba(0, 0, 0, 0.24) 0px 3px 8px";
+        childdiv.style.borderRadius = "10px"
+        childdiv.style.textAlign = "center";
+        imagetwo.style.width = "45%";
+        imageone.style.width = "100%";
+        imageone.style.borderTopLeftRadius = "10px";
+        imageone.style.borderTopRightRadius = "10px"
+        position.style.color = "gray";
+        position.style.fontSize = "20px"
+
+    })
+
+
+    body.append(maindiv);
+    maindiv.append(headingdiv , elementdiv);
+
+    elementdiv.style.display = "flex";
+    elementdiv.style.justifyContent = "space-evenly"
+
+    headingdiv.append(headingone);
+
+</script>
+</html>

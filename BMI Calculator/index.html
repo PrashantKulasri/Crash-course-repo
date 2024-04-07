@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Caluculator
+    </title>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+
+<script>
+    let maindiv = document.querySelector("#container");
+
+    let newdiv = document.createElement("div");
+
+    let newdiv2 = document.createElement("div");
+
+    let firstheading = document.createElement("h1");
+    firstheading.innerText = "Check your BMI : ";
+
+    let firstpara = document.createElement("p");
+    firstpara.innerText = "Enter your height and weight below to check your BMI results";
+
+    let secondpara = document.createElement("p");
+    secondpara.innerText = "Put your weight in here (in KG)";
+
+    let firstinput = document.createElement("input");
+    firstinput.placeholder = "Enter your weight : ";
+
+    let thirdpara = document.createElement("p");
+    thirdpara.innerText = "Enter your height here (in CM)";
+
+    let secondinput = document.createElement("input");
+    secondinput.placeholder = "Enter your weight : ";
+
+    let firstbutton = document.createElement("button");
+    firstbutton.innerText = "Calculate your BMI";
+
+    let lastpara = document.createElement("p");
+    lastpara.innerText = "Your calculated BMI will show here";
+
+    maindiv.append(newdiv);
+    newdiv2.append(firstbutton);
+    newdiv.append(firstheading , firstpara , secondpara , firstinput , thirdpara , secondinput , newdiv2 , lastpara)
+
+    function bmical(){
+        let a = firstinput.value*1;
+        let b = secondinput.value*1;
+
+        if((a/(b*b)) <= 18.4){
+            lastpara.innerText = `Your BMI output is ${a/(b*b)} and you are UNDERWEIGHT`;
+        }
+        else if( (a/b*b >= 18.5) && (a/b*b <= 24.9)){
+            lastpara.innerText = `Your BMI output is ${a/(b*b)} and you are NORMAL WEIGHT`;
+        }
+        else if( (a/b*b >= 25) && (a/b*b <= 29.9)){
+            lastpara.innerText = `Your BMI output is ${a/(b*b)} and you are OVERWEIGHT`;
+        }
+        else if(a/b*b >= 30){
+            lastpara.innerText = `Your BMI output is ${a/(b*b)} and you are OBESE`;
+        }
+        else{
+            lastpara.innerText = `Wrong input entered!`;
+        }
+
+    }
+
+    firstbutton.addEventListener("click",bmical);
+</script>
+</html>
