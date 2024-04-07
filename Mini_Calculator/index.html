@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    
+</body>
+
+<script>
+    let container = document.querySelector("#container");
+
+    container.style.width = "80%";
+    container.style.margin = "auto";
+    container.style.marginTop = "10%";
+
+    let input1 = document.createElement("input");
+    input1.placeholder = "Enter first number : ";
+
+    let input2 = document.createElement("input");
+    input2.placeholder = "Enter second number : ";
+
+    input1.style.marginRight = "15%";
+    input1.style.marginLeft = "15%";
+    input2.style.marginRight = "15%";
+    input2.style.marginLeft = "15%";
+
+    container.append(input1,input2);
+
+
+    let newdiv = document.createElement("div");
+    newdiv.id = "buttonforcalculation";
+
+    newdiv.style.marginTop = "2%";
+    newdiv.style.display = "grid";
+    newdiv.style.gridTemplateColumns = "repeat(4,1fr)"
+
+    let addbutton = document.createElement("button");
+    addbutton.innerText = "Addition";
+
+    let subbutton = document.createElement("button");
+    subbutton.innerText = "Substraction";
+
+    let mulbutton = document.createElement("button");
+    mulbutton.innerText = "Multiplication";
+
+    let divbutton = document.createElement("button");
+    divbutton.innerText = "Division";
+
+    container.append(newdiv);
+    newdiv.append(addbutton,subbutton,mulbutton,divbutton)
+
+    addbutton.addEventListener("click",function(){
+        alert(`Addition of ${input1.value*1} and ${input2.value*1} is ${(input1.value*1) + (input2.value*1)}`);
+    })
+
+    subbutton.addEventListener("click",function(){
+        alert(`Substraction of ${input1.value*1} and ${input2.value*1} is ${(input1.value*1) - (input2.value*1)}`);
+    })
+
+    mulbutton.addEventListener("click",function(){
+        alert(`Multiplication of ${input1.value*1} and ${input2.value*1} is ${(input1.value*1) * (input2.value*1)}`);
+    })
+
+    divbutton.addEventListener("click",function(){
+        alert(`Division of ${input1.value*1} and ${input2.value*1} is ${(input1.value*1) / (input2.value*1)}`);
+    })
+
+
+</script>
+</html>
